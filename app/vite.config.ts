@@ -7,7 +7,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 export default defineConfig({
   base: './',
   build: {
-    outDir: '/tmp/navalmind-dist',
+    outDir: 'dist',
     emptyOutDir: true,
   },
   plugins: [inspectAttr(), react()],
