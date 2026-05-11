@@ -98,7 +98,7 @@ export default function LoginPage() {
           <motion.button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 rounded-xl text-body font-medium tracking-wider"
+            className="w-full py-2.5 rounded-xl text-body font-medium tracking-wider"
             style={{ backgroundColor: 'var(--accent)', color: 'var(--bg-primary)', boxShadow: '0 4px 20px rgba(196, 165, 90, 0.25)' }}
             whileHover={!isSubmitting ? { scale: 1.02 } : undefined}
             whileTap={!isSubmitting ? { scale: 0.98 } : undefined}
