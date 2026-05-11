@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0A0A0A;
+    --bg-secondary: #111111;
+    --bg-elevated: #1A1A1A;
+    --text-primary: #F5F5F0;
+    --text-secondary: #8A8A85;
+    --text-muted: #555550;
+    --accent: #C4A55A;
+    --accent-dim: #8B7A3D;
+    --border-color: #2A2A28;
+    --border-focus: #C4A55A;
+    --success: #6B8F5E;
+
+    --background: 0 0% 4%;
+    --foreground: 48 7% 95%;
+    --card: 0 0% 7%;
+    --card-foreground: 48 7% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 48 7% 95%;
+    --primary: 43 39% 56%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 48 7% 95%;
+    --muted: 0 0% 7%;
+    --muted-foreground: 43 3% 53%;
+    --accent: 43 39% 56%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 3% 16%;
+    --input: 45 3% 16%;
+    --ring: 43 39% 56%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-[var(--border-color)];
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Noto Sans SC", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(196, 165, 90, 0.3);
+    color: var(--text-primary);
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .accent-text {
+    color: var(--accent);
+    text-shadow: 0 0 40px rgba(196, 165, 90, 0.3);
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+  }
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%, 70%, 100% { opacity: 1; }
+    20%, 50% { opacity: 0; }
+  }
+
+  @keyframes scroll-line {
+    0% { height: 0; opacity: 0; }
+    30% { opacity: 1; }
+    100% { height: 40px; opacity: 0; }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes bounce-dot {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+  }
+
+  @keyframes voice-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(196, 165, 90, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(196, 165, 90, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(196, 165, 90, 0); }
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  .animate-scroll-line {
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-dot {
+    animation: bounce-dot 1.4s ease-in-out infinite;
+  }
+
+  .animate-bounce-dot-delay-1 {
+    animation: bounce-dot 1.4s ease-in-out infinite 0.16s;
+  }
+
+  .animate-bounce-dot-delay-2 {
+    animation: bounce-dot 1.4s ease-in-out infinite 0.32s;
+  }
+
+  .animate-voice-pulse {
+    animation: voice-pulse 1.5s ease-out infinite;
+  }
+}
